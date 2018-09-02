@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/TodoApp', (err) => {
-    if (err)
-        return console.log('error connecting to mongodb', err);
-    console.log('connected to mongodb');
-});
+mongoose.connect('mongodb://localhost:27017/TodoApp', { useNewUrlParser: true });
 
-module.exports = { mongoose }
+module.exports = { mongoose };
