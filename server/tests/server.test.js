@@ -5,11 +5,11 @@ const { app } = require('./../server');
 const { Todo } = require('./../models/todo');
 
 beforeEach((done) => {
-    Todo.remove({}).then(() => done());
+    Todo.deleteMany({}).then(() => done());
 });
 
 describe('POST /todos', () => {
-    if ('should create a new todo', (done) => {
+    it('should create a new todo', (done) => {
         var text = 'Test todo text';
 
         request(app)
