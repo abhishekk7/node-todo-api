@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const { mongoose } = require('./db/mongoose');
 const { Todo } = require('./models/todo');
 const { User } = require('./models/user');
-
+const port = 8001;
 
 let app = express();
 app.use(bodyParser.json());
@@ -22,8 +22,8 @@ app.post('/todos', (req, res) => {
     });
 });
 
-app.listen(3001, () => {
-    console.log('Started on port 3001');
+app.listen(port, () => {
+    console.log('Started on port ', port);
 });
 
 module.exports = { app };
